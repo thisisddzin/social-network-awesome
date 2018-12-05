@@ -1,14 +1,27 @@
+const { User } = require('../models')
+
 class UserController {
   create (req, res) {
-    res.render('auth/signup')
+    return res.render('auth/signup')
   }
 
-  store (req, res) {
-    res.redirect('/feed')
+  async store (req, res) {
+    const { name, password, birth, email } = req.body
+    console.log(req.body)
+    if (!email || !name || !password || !birth) {
+      return res.render(`auth/signup`, { email, name, password, birth })
+    }
+
+    await User.create(req.body)
+
+    return res.redirect('/')
   }
 
   logout (req, res) {
-    res.redirect('/')
+    req.session.destroy(() => {
+      res.clearCookie('root')
+      return res.redirect('/')
+    })
   }
 }
 

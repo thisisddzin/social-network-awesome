@@ -1,6 +1,24 @@
 {% extends "../_layouts/auth.njk" %}
 
 {% block body %}
+  <h1>Awesome</h1>
+
+{% if unUser %}
+  <strong style="font-size:12px; font-weight:100;font-family:sans-serif,arial; background-color:red; padding: 5px 10px; color:white;border-radius:20px; position:absolute; top:20px; left:20px" >{{unUser}}</strong>
+{% endif %}
+
+{% if unUserPass %}
+  <strong style="font-size:12px; font-weight:100;font-family:sans-serif,arial; background-color:red; padding: 5px 10px; color:white;border-radius:20px; position:absolute; top:20px; left:50px" >{{unUserPass}}</strong>
+{% endif %}
+
+{% if email === '' %}
+  <strong style="font-size:12px; font-weight:100;font-family:sans-serif,arial; background-color:red; padding: 5px 10px; color:white;border-radius:20px; position:absolute; top:20px; left:20px" >Você esqueceu de preencher o campo de E-mail</strong>
+{% endif %}
+
+{% if password === '' %}
+  <strong style="font-size:12px; font-weight:100;font-family:sans-serif,arial; background-color:red; padding: 5px 10px; color:white;border-radius:20px; position:absolute; top:50px; left:20px" >Você esqueceu de preencher o campo de Senha</strong>
+{% endif %}
+
   <form action="/signin" method="post">
     <input type="email" name="email" id="email" placeholder="Digite seu e-mail" />
     <input type="password" name="password" id="password" placeholder="Digite sua senha" />

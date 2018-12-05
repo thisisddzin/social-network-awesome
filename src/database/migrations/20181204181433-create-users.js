@@ -32,7 +32,8 @@ module.exports = {
       },
       bio: {
         allowNull: true,
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
+        defaultValue: 'Insira informações na sua Bio! =)'
       },
       owner: {
         allowNull: false,
