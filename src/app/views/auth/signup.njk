@@ -1,0 +1,25 @@
+{% extends "../_layouts/auth.njk" %}
+
+{% block body %}
+<h2>Criar uma nova conta.</h2>
+  <form action="/signup" method="post">
+  <label for="name" >
+    Digite seu nome e sobrenome
+  </label>
+    <input type="text" name="name" id="name" placeholder="Ex: Mark Zuckenberg">
+  <label for="email" >
+    Digite seu principal e-mail
+  </label>
+    <input type="email" name="email" id="email" placeholder="Ex: username@gmail.com" />
+  <label for="birth" >
+    Digite sua data de nascimento
+  </label>
+    <input type="date" name="birth" id="birth" placeholder="04/12/2018">
+  <label for="password" >
+    Digite sua senha
+  </label>
+    <input type="password" name="password" id="password" placeholder="***********" />
+    <button type="submit">Criar conta</button>
+    <a href="/"title="Voltar e logar na minha conta." > > Já tenho uma conta.</a>
+  </form>
+{% endblock %}

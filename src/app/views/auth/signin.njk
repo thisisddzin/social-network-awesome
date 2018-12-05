@@ -1,0 +1,10 @@
+{% extends "../_layouts/auth.njk" %}
+
+{% block body %}
+  <form action="/signin" method="post">
+    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" />
+    <input type="password" name="password" id="password" placeholder="Digite sua senha" />
+    <button type="submit">Entrar</button>
+    <a href="/signup"title="Quero criar uma nova conta." > > Desejo criar uma nova conta.</a>
+  </form>
+{% endblock %}

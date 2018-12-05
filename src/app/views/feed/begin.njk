@@ -1,0 +1,101 @@
+{% extends "../_layouts/feed.njk" %}
+
+{% block body %}
+  <h1 style="position:fixed; left: 10px; top: 0px;">Awesome</h1>
+  <a style="background-color:orangered; color:white; padding:5px 10px; border-radius: 5px; position:absolute; right:10px; top:0px;" href="/logout">Sair</a>
+  <aside id="nav-left">
+    <div id="info-user">
+      <img src="images/icons/man.svg" alt="avatar">
+      <strong>Fulano da Silva</strong>
+      <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+    </div>
+    <div id="new-post">
+      <form action="/newpost" method="post">
+        <textarea name="newpost" id="newpost" cols="30" rows="10" placeholder="Digite aqui sua nova postagem"></textarea>
+        <div id="buttons">
+          <button type="submit">Postar</button>
+          <button type="reset">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </aside>
+
+  <section id="feed">
+    <ul>
+      <h2 >Últimas postagens.</h2>
+      <li>
+        <div id="feed-left">
+          <a href="#"><img src="images/icons/like.svg" alt="like-post"></a>
+          <a href="#"><img src="images/icons/comment.svg" alt="comment-post"></a>
+          <a href="#"><img src="images/icons/more.svg" alt="more-post"></a>
+        </div>
+        <div id="feed-main">
+          <div id="info-post">
+            <img src="images/icons/man.svg" alt="avatar-post">
+            <p>postado por Fulano da Silva</p>
+            <img src="images/icons/clock.svg" alt="clock-post">
+            <p>16:00</p>
+          </div>
+          <article>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </article>
+        </div>
+      </li>
+      <li>
+        <div id="feed-left">
+          <a href="#"><img src="images/icons/like.svg" alt="like-post"></a>
+          <a href="#"><img src="images/icons/comment.svg" alt="comment-post"></a>
+          <a href="#"><img src="images/icons/more.svg" alt="more-post"></a>
+        </div>
+        <div id="feed-main">
+          <div id="info-post">
+            <img src="images/icons/man.svg" alt="avatar-post">
+            <p>postado por Fulano da Silva</p>
+            <img src="images/icons/clock.svg" alt="clock-post">
+            <p>16:00</p>
+          </div>
+          <article>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </article>
+        </div>
+      </li>
+      <li>
+        <div id="feed-left">
+          <a href="#"><img src="images/icons/like.svg" alt="like-post"></a>
+          <a href="#"><img src="images/icons/comment.svg" alt="comment-post"></a>
+          <a href="#"><img src="images/icons/more.svg" alt="more-post"></a>
+        </div>
+        <div id="feed-main">
+          <div id="info-post">
+            <img src="images/icons/man.svg" alt="avatar-post">
+            <p>postado por Fulano da Silva</p>
+            <img src="images/icons/clock.svg" alt="clock-post">
+            <p>16:00</p>
+          </div>
+          <article>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </article>
+        </div>
+      </li>
+      <li>
+        <div id="feed-left">
+          <a href="#"><img src="images/icons/like.svg" alt="like-post"></a>
+          <a href="#"><img src="images/icons/comment.svg" alt="comment-post"></a>
+          <a href="#"><img src="images/icons/more.svg" alt="more-post"></a>
+        </div>
+        <div id="feed-main">
+          <div id="info-post">
+            <img src="images/icons/man.svg" alt="avatar-post">
+            <p>postado por Fulano da Silva</p>
+            <img src="images/icons/clock.svg" alt="clock-post">
+            <p>16:00</p>
+          </div>
+          <article>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </article>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+{% endblock %}
