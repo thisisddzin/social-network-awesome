@@ -28,7 +28,8 @@ module.exports = {
       },
       avatar: {
         allowNull: true,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: 'images/icons/man.svg'
       },
       bio: {
         allowNull: true,

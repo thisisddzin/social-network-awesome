@@ -6,7 +6,7 @@
   <a style="background-color:orangered; color:white; padding:5px 10px; border-radius: 5px; position:absolute; right:10px; top:0px;" href="/logout">Sair</a>
   <aside id="nav-left">
     <div id="info-user">
-      <img src="images/icons/man.svg" alt="avatar">
+      <img src="{{user.avatar}}" alt="avatar">
       <strong>{{user.name}}</strong>
       <p>{{user.bio}}</p>
     </div>
@@ -35,10 +35,10 @@
             </div>
             <div id="feed-main">
               <div id="info-post">
-                <img src="images/icons/man.svg" alt="avatar-post">
-                <p>postado por Fulano da Silva</p>
+                <img src="{{post.user.avatar}}" alt="avatar-post">
+                <p>postado por {{post.user.name}}</p>
                 <img src="images/icons/clock.svg" alt="clock-post">
-                <p>16:00</p>
+                <p>{{post.updated_at.getHours()}}:{{post.updated_at.getMinutes()}}:{{post.updated_at.getSeconds()}}</p>
               </div>
               <article>{{post.post}}</article>
             </div>
