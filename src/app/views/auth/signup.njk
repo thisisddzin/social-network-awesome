@@ -3,20 +3,24 @@
 {% block body %}
   <h1>Awesome</h1>
 
+{% if emailExist !== '' %}
+  <strong style="background-color:red; padding: 5px 10px; color:white;border-radius:20px; position:absolute; top:20px; left:20px" >O E-mail que você digitou já existe, tente entrar com este e-mail.</strong>
+{% endif %}
+
 {% if name === '' %}
-  <strong style="font-size:12px; font-weight:100;font-family:sans-serif,arial; background-color:red; padding: 5px 10px; color:white;border-radius:20px; position:absolute; top:20px; left:20px" >Você esqueceu de preencher o campo de Nome</strong>
+  <strong style="background-color:red; padding: 5px 10px; color:white;border-radius:20px; position:absolute; top:20px; left:20px" >Você esqueceu de preencher o campo de Nome</strong>
 {% endif %}
 
 {% if email === '' %}
-  <strong style="font-size:12px; font-weight:100;font-family:sans-serif,arial;  background-color:red; padding: 5px 10px; color:white;border-radius:20px; position:absolute; top:50px; left:20px" >Você esqueceu de preencher o campo de E-mail</strong>
+  <strong style="background-color:red; padding: 5px 10px; color:white;border-radius:20px; position:absolute; top:50px; left:20px" >Você esqueceu de preencher o campo de E-mail</strong>
 {% endif %}
 
 {% if password === '' %}
-  <strong style="font-size:12px; font-weight:100;font-family:sans-serif,arial; background-color:red; padding: 5px 10px; color:white;border-radius:20px; position:absolute; top:80px; left:20px" >Você esqueceu de preencher o campo de Senha</strong>
+  <strong style="background-color:red; padding: 5px 10px; color:white;border-radius:20px; position:absolute; top:80px; left:20px" >Você esqueceu de preencher o campo de Senha</strong>
 {% endif %}
 
 {% if birth === '' %}
-  <strong style="font-size:12px; font-weight:100;font-family:sans-serif,arial; background-color:red; padding: 5px 10px; color:white;border-radius:20px; position:absolute; top:110px; left:20px" >Você esqueceu de preencher o campo de Nascimento</strong>
+  <strong style="background-color:red; padding: 5px 10px; color:white;border-radius:20px; position:absolute; top:110px; left:20px" >Você esqueceu de preencher o campo de Nascimento</strong>
 {% endif %}
 
 <h2>Criar uma nova conta.</h2>
