@@ -21,4 +21,9 @@ Bibliotecas Utilizadas:
 - Sequelize
 - Connect-redis
 
+Banco de Dados:
+
+- PostgreSql
+- Redis (NoSql, para armazenar sessões)
+
 ### Author: Me =)
