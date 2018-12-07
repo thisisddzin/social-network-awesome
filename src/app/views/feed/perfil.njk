@@ -1,0 +1,56 @@
+{% extends "../_layouts/auth.njk" %}
+
+{% block body %}
+
+{% if userShared === undefined %}
+<form action="/perfil_update" method="post" enctype="multipart/form-data">
+  <label for="avatar" >
+    <img src="/{{user.avatar}}" height="100" alt="">
+  </label>
+    <input type="file" name="avatar" id="avatar">
+  <label for="name" >
+    Nome
+  </label>
+    <input type="text" name="name" id="name" value="{{user.name}}">
+  <label for="email" >
+    E-mail
+  </label>
+    <input type="email" name="email" id="email" value="{{user.email}}" />
+  <label for="bio" >
+    Biografia
+  </label>
+    <textarea style="margin-bottom: 10px" type="text" cols="30" rows="10" name="bio" id="bio">{{user.bio}}</textarea>
+  {# <label for="birth" >
+    Data de nascimento
+  </label>
+    <input type="date" name="birth" id="birth" value="{{user.birth}}"> #}
+  <label for="password" >
+    Senha
+  </label>
+    <input type="password" name="password" id="password" placeholder="***********" />
+    <button type="submit">Concluir Edição</button>
+    <a href="/feed"> Voltar</a>
+  </form>
+{% endif %}
+
+
+{% if userShared %}
+<div id="info-user">
+<img src="/{{userShared.avatar}}" alt="">
+<h1>{{userShared.name}}</h1><br>
+<h1>{{userShared.bio}}</h1>
+<h1>{{userShared.email}}</h1>
+</div>
+{% endif %}
+
+<script type="text/javascript" >
+    const avatarInput = document.getElementById("avatar");
+    const imgAvatar = document.querySelector("label[for=avatar] img")
+    avatarInput.onchange = function(e){
+      imgAvatar.classList.add('preview');
+      imgAvatar.src = URL.createObjectURL(e.target.files[0])
+    }
+  </script>
+
+{% endblock %}
+

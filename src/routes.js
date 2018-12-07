@@ -6,6 +6,7 @@ const UserController = require('./app/controllers/UserController')
 const SessionController = require('./app/controllers/SessionController')
 const FeedController = require('./app/controllers/FeedController')
 const PostController = require('./app/controllers/PostController')
+const PerfilController = require('./app/controllers/PerfilController')
 
 const authMiddleware = require('./app/middlewares/auth')
 const guestMiddleware = require('./app/middlewares/guest')
@@ -13,6 +14,8 @@ const guestMiddleware = require('./app/middlewares/guest')
 routes.get('/', guestMiddleware, SessionController.create)
 
 routes.post('/newpost', PostController.create)
+
+routes.get('/perfil', authMiddleware, PerfilController.index)
 
 routes.post('/signin', SessionController.store)
 

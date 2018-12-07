@@ -26,6 +26,10 @@ body {
   font-family: "Unlock", cursive, "sans-serif";
 }
 
+input[type="file"] {
+  display: none;
+}
+
 button,
 input {
   outline: 0;
