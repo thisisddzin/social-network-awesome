@@ -1,9 +1,9 @@
 const { Post } = require('../models')
 
 class PostController {
-  async create (req, res) {
+  create (req, res) {
     console.log(req.body)
-    await Post.create(req.body)
+    Post.create({ ...req.body, user_id: req.session.user.id })
     res.redirect('/feed')
   }
 }

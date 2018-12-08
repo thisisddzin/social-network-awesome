@@ -6,7 +6,12 @@
   <a style="background-color:orangered; color:white; padding:5px 10px; border-radius: 5px; position:absolute; right:10px; top:0px;" href="/logout">Sair</a>
   <aside id="nav-left">
     <div id="info-user">
+    {% if user.avatar === 'images/icons/man.svg' %}
       <img src="{{user.avatar}}" alt="avatar">
+    {% endif %}
+    {% if user.avatar !== 'images/icons/man.svg' %}
+      <img src="/files/{{user.avatar}}" alt="avatar">
+    {% endif %}
       <strong>{{user.name}}</strong>
       <p>{{user.bio}}</p>
       <a href="/perfil">Editar meu perfil</a>
@@ -14,7 +19,7 @@
     <div id="new-post">
       <form action="/newpost" method="post">
         <textarea name="post" id="post" cols="30" rows="10" placeholder="Digite aqui sua nova postagem"></textarea>
-        <input type="hidden" name="user_id" value="{{user.id}}">
+        {# <input type="hidden" name="user_id" value="{{user.id}}"> #}
         <div id="buttons">
           <button type="submit">Postar</button>
           <button type="reset">Cancelar</button>
@@ -36,7 +41,12 @@
             </div>
             <div id="feed-main">
               <div id="info-post">
-                <img src="{{post.user.avatar}}" alt="avatar-post">
+                {% if post.user.avatar === 'images/icons/man.svg' %}
+                  <img src="/{{post.user.avatar}}" alt="avatar">
+                {% endif %}
+                {% if post.user.avatar !== 'images/icons/man.svg' %}
+                  <img src="/files/{{post.user.avatar}}" alt="avatar">
+                {% endif %}
                 <p>postado por <a href="/perfil/?user={{post.user.id}}">{{post.user.name}}</a></p>
                 <img src="images/icons/clock.svg" alt="clock-post">
                 <p style="font-size:12px;">{{post.updated_at.getHours()}}:{{post.updated_at.getMinutes()}}:{{post.updated_at.getSeconds()}}</p>

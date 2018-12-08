@@ -5,7 +5,12 @@
 {% if userShared === undefined %}
 <form action="/perfil_update" method="post" enctype="multipart/form-data">
   <label for="avatar" >
-    <img src="/{{user.avatar}}" height="100" alt="">
+    {% if user.avatar === 'images/icons/man.svg' %}
+      <img src="/{{user.avatar}}" height="100" alt="avatar">
+    {% endif %}
+    {% if user.avatar !== 'images/icons/man.svg' %}
+      <img src="/files/{{user.avatar}}" height="100" alt="avatar">
+    {% endif %}
   </label>
     <input type="file" name="avatar" id="avatar">
   <label for="name" >
@@ -25,7 +30,7 @@
   </label>
     <input type="date" name="birth" id="birth" value="{{user.birth}}"> #}
   <label for="password" >
-    Senha
+    Nova Senha
   </label>
     <input type="password" name="password" id="password" placeholder="***********" />
     <button type="submit">Concluir Edição</button>
@@ -36,11 +41,18 @@
 
 {% if userShared %}
 <div id="info-user">
-<img src="/{{userShared.avatar}}" alt="">
-<h1>{{userShared.name}}</h1><br>
-<h1>{{userShared.bio}}</h1>
-<h1>{{userShared.email}}</h1>
+{% if userShared.avatar === 'images/icons/man.svg' %}
+  <img src="/{{userShared.avatar}}" height="100" alt="avatar">
+{% endif %}
+{% if userShared.avatar !== 'images/icons/man.svg' %}
+  <img src="/files/{{userShared.avatar}}" height="100" alt="avatar">
+{% endif %}
+<strong>{{userShared.name}}</strong><br>
+<strong>Bio: {{userShared.bio}}</strong>
+<strong>E-mail: {{userShared.email}}</strong>
+<strong>Data de Nascimento: {{userShared.birth.getDate()+1}}/{{userShared.birth.getMonth()+1}}/{{userShared.birth.getFullYear()}}</strong>
 </div>
+    <a href="/feed"> Voltar</a>
 {% endif %}
 
 <script type="text/javascript" >

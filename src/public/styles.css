@@ -106,17 +106,30 @@ button {
   color: rgb(174, 145, 212);
 }
 
-#auth-wrapper form input {
+#auth-wrapper form input,
+textarea {
   padding: 10px 20px;
   width: 200px;
   margin-bottom: 10px;
-  background: transparent;
   border-radius: 20px;
   border: none;
 }
 
 #auth-wrapper h1 {
   font-size: 80px;
+}
+
+#auth-wrapper #info-user {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+}
+#auth-wrapper #info-user img {
+  align-self: flex-start;
+}
+
+#auth-wrapper #info-user strong {
+  margin: 10px 0;
 }
 
 @media only screen and (max-width: 500px) {
