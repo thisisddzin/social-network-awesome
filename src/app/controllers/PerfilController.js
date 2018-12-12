@@ -11,7 +11,7 @@ class PerfilController {
     return res.render('feed/perfil')
   }
 
-  update (req, res) {
+  async update (req, res) {
     const { name, bio, email, password } = req.body
 
     // PARA ATUALIZAR A SESSÃO EM REALTIME
@@ -25,7 +25,7 @@ class PerfilController {
       req.session.user.avatar = filename
 
       if (password) {
-        User.update(
+        await User.update(
           {
             name,
             bio,
@@ -33,12 +33,12 @@ class PerfilController {
             password,
             avatar: filename
           },
-          { where: { id: req.session.user.id } }
+          { where: { id: req.session.user.id }, individualHooks: true }
         )
         return res.redirect('/')
       }
 
-      User.update(
+      await User.update(
         {
           name,
           bio,
@@ -51,14 +51,14 @@ class PerfilController {
     }
 
     if (password) {
-      User.update(
+      await User.update(
         {
           name,
           bio,
           email,
           password
         },
-        { where: { id: req.session.user.id } }
+        { where: { id: req.session.user.id }, individualHooks: true }
       )
       return res.redirect('/')
     }

@@ -19,7 +19,6 @@ class UserController {
     })
 
     if (emailExist) {
-      console.log('email já existe')
       return res.render('auth/signup', { emailExist })
     }
 
